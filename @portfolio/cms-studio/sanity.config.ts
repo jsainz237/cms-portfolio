@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'portfolio',
+  title: 'portfolio-cms-studio',
 
   projectId: '881v76id',
   dataset: 'production',
