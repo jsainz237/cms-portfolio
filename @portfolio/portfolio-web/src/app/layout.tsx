@@ -3,6 +3,7 @@ import { Literata, Montserrat, VT323 } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Title } from "@/components/title";
+import Cursor from "@/components/cursor";
 
 const literata = Literata({
   variable: "--font-serif",
@@ -38,6 +39,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+          <Cursor />
           <div className="flex flex-col items-center min-h-screen">
             <div className="container flex-1 flex flex-col">
               <Title />

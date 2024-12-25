@@ -15,6 +15,9 @@ export default {
 				serif: ['var(--font-serif)', ...fontFamily.serif],
 				mono: ['var(--font-mono)', ...fontFamily.mono],
 			},
+			animation: {
+				linefall: 'linefall 6s linear infinite',
+			},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
