@@ -70,3 +70,38 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .type-h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+  .type-h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+  }
+  .type-h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+  .type-h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+  .type-p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+  .type-large {
+    @apply text-lg font-semibold;
+  }
+  .type-small {
+    @apply text-sm font-medium leading-none;
+  }
+  .type-muted {
+    @apply text-sm text-muted-foreground;
+  }
+  .dashed-border {
+
+    @apply bg-gradient-to-b from-slate-700 from-60% to-transparent to-60%;
+    /* background-image: linear-gradient(white 50%, rgba(255,255,255,0) 0%); */
+    background-position: right;
+    background-size: 1px 12px;
+    background-repeat: repeat-y;
+  }
+}

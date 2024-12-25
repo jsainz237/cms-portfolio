@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Literata, Montserrat, VT323 } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
+import { Title } from "@/components/title";
 
 const literata = Literata({
   variable: "--font-serif",
@@ -37,7 +38,12 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex flex-col items-center min-h-screen">
+            <div className="container flex-1 flex flex-col">
+              <Title />
+              {children}
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>
