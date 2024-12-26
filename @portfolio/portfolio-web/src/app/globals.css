@@ -11,8 +11,13 @@
   }
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes highlighter {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 100%;
+  }
 }
 
 @layer base {
@@ -45,7 +50,7 @@ body {
   }
   .dark {
     --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --foreground: 220 35% 80%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
@@ -110,5 +115,9 @@ body {
     background-position: right;
     background-size: 1px 12px;
     background-repeat: repeat-y;
+  }
+  .highlighted {
+    @apply relative hover:after:w-[140%] after:transition-all after:duration-200 after:ease-out-quart;
+    @apply after:content-[''] after:w-0 after:h-1/2 after:absolute after:top-[18px] after:left-2 after:bg-foreground after:mix-blend-difference;
   }
 }

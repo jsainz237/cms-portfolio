@@ -40,11 +40,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Cursor />
-          <div className="flex flex-col items-center min-h-screen">
-            <div className="container flex-1 flex flex-col">
-              <Title />
-              {children}
-            </div>
+          <div className="flex min-h-screen">
+            <Title />
+            {children}
           </div>
         </ThemeProvider>
       </body>

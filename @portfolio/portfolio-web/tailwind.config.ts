@@ -17,6 +17,16 @@ export default {
 			},
 			animation: {
 				linefall: 'linefall 6s linear infinite',
+				highlighter: 'highlighter 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000)',
+			},
+			keyframes: {
+				highlighter: {
+					'0%': { maxWidth: '0' },
+					'100%': { maxWidth: '100%' },
+				}
+			},
+			transitionTimingFunction: {
+				'out-quart': 'cubic-bezier(0.165, 0.840, 0.440, 1.000)',
 			},
   		colors: {
   			background: 'hsl(var(--background))',
