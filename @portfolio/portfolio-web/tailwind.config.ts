@@ -23,7 +23,12 @@ export default {
 				highlighter: {
 					'0%': { maxWidth: '0' },
 					'100%': { maxWidth: '100%' },
-				}
+				},
+				wave: {
+					'0%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(5%)' },
+					'100%': { transform: 'translateY(0)' },
+				},
 			},
 			transitionTimingFunction: {
 				'out-quart': 'cubic-bezier(0.165, 0.840, 0.440, 1.000)',
@@ -77,5 +82,6 @@ export default {
   		}
   	}
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
