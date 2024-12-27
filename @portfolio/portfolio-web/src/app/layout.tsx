@@ -44,7 +44,9 @@ export default function RootLayout({
           <Cursor />
           <div className="flex min-h-screen">
             <Title />
-            {children}
+            <div id="transition-container" className="flex flex-1">
+              {children}
+            </div>
           </div>
         </ThemeProvider>
       </body>

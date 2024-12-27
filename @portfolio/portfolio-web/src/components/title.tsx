@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+import { TransitionLink } from "./transition-link";
 
 const logoHeight = 24;
 const logoWidth = 1.354 * logoHeight;
@@ -23,14 +24,14 @@ export function Title() {
         </Link>
       </div>
       <div className="py-4">
-        <Link href="/">
+        <TransitionLink href="/">
           <Image
             src="/js-logo.svg"
             alt="Jesse Sainz"
             width={logoWidth}
             height={logoHeight}
           />
-        </Link>
+        </TransitionLink>
         <h1
           className={cn(
             "highlighted text-6xl mt-36 font-serif mb-4 font-normal uppercase",
@@ -42,26 +43,26 @@ export function Title() {
         <p className="font-mono text-2xl text-muted-foreground">Austin, TX</p>
 
         <div className="mt-28 flex flex-col items-start gap-6">
-          <Link href="/about">
+          <TransitionLink href="/about">
             <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#decaba]">
               About
             </h2>
-          </Link>
-          <Link href="/projects">
+          </TransitionLink>
+          <TransitionLink href="/projects">
             <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#badebe]">
               Projects
             </h2>
-          </Link>
-          <Link href="/tech">
+          </TransitionLink>
+          <TransitionLink href="/tech">
             <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#d3bade]">
               Tech
             </h2>
-          </Link>
-          <Link href="experience">
+          </TransitionLink>
+          <TransitionLink href="experience">
             <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#debacd]">
               Experience
             </h2>
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </div>
