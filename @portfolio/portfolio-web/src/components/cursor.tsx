@@ -1,9 +1,10 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
+import { useEffect, useState } from "react";
 
-const Cursor = () => {
+import { cn } from "@/lib/utils";
+
+export const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   useEffect(() => {
@@ -14,19 +15,19 @@ const Cursor = () => {
     const handleMouseEnter = () => setIsHovering(true);
     const handleMouseLeave = () => setIsHovering(false);
 
-    const interactiveElements = document.querySelectorAll('button, a');
+    const interactiveElements = document.querySelectorAll("button, a");
     interactiveElements.forEach(element => {
-      element.addEventListener('mouseenter', handleMouseEnter);
-      element.addEventListener('mouseleave', handleMouseLeave);
+      element.addEventListener("mouseenter", handleMouseEnter);
+      element.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    window.addEventListener('mousemove', updateCursorPosition);
+    window.addEventListener("mousemove", updateCursorPosition);
 
     return () => {
-      window.removeEventListener('mousemove', updateCursorPosition);
+      window.removeEventListener("mousemove", updateCursorPosition);
       interactiveElements.forEach(element => {
-        element.removeEventListener('mouseenter', handleMouseEnter);
-        element.removeEventListener('mouseleave', handleMouseLeave);
+        element.removeEventListener("mouseenter", handleMouseEnter);
+        element.removeEventListener("mouseleave", handleMouseLeave);
       });
     };
   }, []);
@@ -36,8 +37,8 @@ const Cursor = () => {
   return (
     <div
       className={cn(
-        'fixed size-6 bg-foreground rounded-full z-[9999] transform -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-100 ease-out mix-blend-difference',
-        isHovering && 'size-9'
+        "fixed size-6 bg-foreground rounded-full z-[9999] transform -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-100 ease-out mix-blend-difference",
+        isHovering && "size-9",
       )}
       style={{
         transform: `translate(${position.x - cursorOffset}px, ${position.y - cursorOffset}px)`,
@@ -45,5 +46,3 @@ const Cursor = () => {
     />
   );
 };
-
-export default Cursor;

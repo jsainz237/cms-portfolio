@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
 import { Literata, Montserrat, VT323 } from "next/font/google";
+import type { Metadata } from "next";
+
+import { Cursor } from "@/components/cursor";
 import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
 import { Title } from "@/components/title";
-import Cursor from "@/components/cursor";
+
+import "./globals.css";
 
 const literata = Literata({
   variable: "--font-serif",
@@ -16,7 +18,7 @@ const montserrat = Montserrat({
 const vt323 = VT323({
   weight: ["400"],
   variable: "--font-mono",
-})
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
