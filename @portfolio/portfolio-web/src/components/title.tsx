@@ -34,7 +34,7 @@ export function Title() {
         <h1
           className={cn(
             "highlighted text-6xl mt-36 font-serif mb-4 font-normal uppercase",
-            "after:top-7 after:left-14 after:w-[96%] after:bg-[#97ace7] hover:after:w-[96%] after:animate-highlighter after:h-3/4",
+            "after:top-7 after:max-w-0 after:left-14 after:w-[96%] after:bg-[#97ace7] hover:after:w-[96%] after:animate-highlighter after:h-3/4",
           )}
         >
           Jesse Sainz

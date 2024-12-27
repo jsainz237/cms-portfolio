@@ -17,7 +17,7 @@ export default {
 			},
 			animation: {
 				linefall: 'linefall 6s linear infinite',
-				highlighter: 'highlighter 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000)',
+				highlighter: 'highlighter 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s forwards',
 			},
 			keyframes: {
 				highlighter: {
