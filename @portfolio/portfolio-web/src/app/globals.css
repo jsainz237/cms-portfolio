@@ -1,36 +1,8 @@
+@import "./animations.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@keyframes linefall {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 24px;
-  }
-}
-
-@keyframes highlighter {
-  0% {
-    max-width: 0;
-  }
-  100% {
-    max-width: 100%;
-  }
-}
-
-@keyframes wave {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 
 #transition-container {
   transition: opacity 0.5s ease-in-out;
