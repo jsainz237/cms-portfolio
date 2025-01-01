@@ -18,6 +18,13 @@ export const projectType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'background',
+      title: 'Background Color',
+      type: 'string',
+      initialValue: '#000000',
+      validation: (rule) => rule.required().regex(/^#([0-9a-fA-F]{6})$/),
+    }),
+    defineField({
       name: 'links',
       type: 'array',
       of: [
@@ -37,6 +44,12 @@ export const projectType = defineType({
           ],
         },
       ]
+    }),
+    defineField({
+      name: 'technologies',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'technology' }] }],
+      validation: (rule) => rule.required().min(1),
     }),
   ],
 });
