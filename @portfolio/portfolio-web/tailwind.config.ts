@@ -21,6 +21,10 @@ export default {
           "highlighter 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s forwards",
         "page-fade-in": "fadeIn 0.5s ease-in-out forwards",
       },
+      backgroundImage: {
+        "mixed-gradient":
+          "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(2,8,23,1) 25%, rgba(2,8,23,1) 75%, rgba(255,255,255,0) 100%)",
+      },
       keyframes: {
         highlighter: {
           "0%": { maxWidth: "0" },
@@ -30,6 +34,10 @@ export default {
           "0%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(5%)" },
           "100%": { transform: "translateY(0)" },
+        },
+        "translate-x": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100vw)" },
         },
       },
       transitionTimingFunction: {
