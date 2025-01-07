@@ -8,3 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export async function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+export function parsePx(value: string) {
+  return parseFloat(value.replace("px", ""));
+}

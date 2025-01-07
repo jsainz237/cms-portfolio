@@ -74,6 +74,12 @@
 }
 
 @layer components {
+  #cursor {
+    transition: background-color .2s ease-in-out, height .2s ease-in-out, width .2s ease-in-out, border-radius .2s ease-in-out;
+  }
+  #cursor.-filling {
+    transition: top .2s cubic-bezier(0,.1,.1,1), left .25s cubic-bezier(0,.1,.1,1), background-color .2s ease-in-out, height .2s ease-in-out, width .2s ease-in-out, border-radius .2s ease-in-out;
+  }
   .type-h1 {
     @apply scroll-m-20 text-4xl tracking-tight lg:text-5xl;
   }
