@@ -2,13 +2,16 @@ import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Project, Technology } from "@/sanity/types";
+import { Unpacked } from "@/lib/utils";
+import { ProjectQueryResult } from "@/sanity/types";
 
 import { AnimatedFill } from "./animated-fill";
 import { TechIcon } from "./tech-icon";
 
+type Project = Unpacked<ProjectQueryResult>;
+
 interface Props {
-  project: Project & { logo: string; technologies: Technology[] };
+  project: Project;
 }
 
 export const ProjectCard = ({ project }: Props) => {
@@ -47,8 +50,8 @@ export const ProjectCard = ({ project }: Props) => {
           ))}
         </div>
         <div className="flex gap-2">
-          {project.technologies?.map((tech: Technology) => (
-            <TechIcon key={tech.name} tech={tech as any} />
+          {project.technologies?.map(tech => (
+            <TechIcon key={tech.name} tech={tech} />
           ))}
         </div>
       </div>

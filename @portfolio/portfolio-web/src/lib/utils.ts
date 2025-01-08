@@ -12,3 +12,5 @@ export async function sleep(ms: number) {
 export function parsePx(value: string) {
   return parseFloat(value.replace("px", ""));
 }
+
+export type Unpacked<T> = T extends (infer U)[] ? U : T;

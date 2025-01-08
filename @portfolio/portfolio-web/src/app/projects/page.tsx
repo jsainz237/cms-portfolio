@@ -3,7 +3,7 @@ import { groq } from "next-sanity";
 
 import { ProjectCard } from "@/components/project-card";
 import { client } from "@/sanity/client";
-import { Project } from "@/sanity/types";
+import { ProjectQueryResult } from "@/sanity/types";
 
 import Lines from "../../../public/bg-lines.svg";
 
@@ -20,18 +20,19 @@ const projectQuery = groq`*[_type == "project"] | order(_updatedAt desc){
 
 const getProjects = unstable_cache(
   async () => {
-    return await client.fetch<Project[]>(projectQuery);
+    return await client.fetch<ProjectQueryResult>(projectQuery);
   },
   ["projects"],
   { revalidate: 60 * 60 * 24, tags: ["projects"] },
 );
 
 export default async function Projects() {
-  const projects = await client.fetch<Project[]>(projectQuery);
+  const _projects = await getProjects();
+  const projects = new Array(5).fill(_projects[0]);
 
   return (
     <div className="relative flex-1 animate-page-fade-in pr-12">
-      <div className="flex h-full flex-col gap-4 overflow-y-auto">
+      <div className="scrollbar-hidden flex h-full max-h-screen flex-col gap-12 overflow-y-auto">
         <div className="mt-36" />
         {projects.map(project => (
           <ProjectCard key={project._id} project={project as any} />

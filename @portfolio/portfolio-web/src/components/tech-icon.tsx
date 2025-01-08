@@ -1,12 +1,16 @@
 import Image from "next/image";
 
-import { Technology } from "@/sanity/types";
+import { Unpacked } from "@/lib/utils";
+import { ProjectQueryResult } from "@/sanity/types";
+
+type Technology = Unpacked<Unpacked<ProjectQueryResult>["technologies"]>;
 
 interface Props {
-  tech: Technology & { icon: { url: string } };
+  tech: Technology;
 }
 
 export const TechIcon = ({ tech }: Props) => {
+  if (!tech) return null;
   return (
     <button className="group mt-2 flex cursor-none items-center">
       <div
