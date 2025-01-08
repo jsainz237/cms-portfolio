@@ -25,6 +25,12 @@ export const projectType = defineType({
       validation: (rule) => rule.required().regex(/^#([0-9a-fA-F]{6})$/),
     }),
     defineField({
+      name: 'logo',
+      title: 'Logo',
+      type: 'image',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'links',
       type: 'array',
       of: [

@@ -14,7 +14,7 @@ export const technologyType = defineType({
     defineField({
       name: 'icon',
       title: 'Icon',
-      type: 'file',
+      type: 'image',
     }),
     defineField({
       name: 'highlight',
