@@ -92,11 +92,12 @@ export const Cursor = () => {
       const colorCode = extractColorCode(element);
       const { x: elemX, y: elemY } = element.getBoundingClientRect();
 
-      const { width, height } = copyStyles(element, [
-        "border-radius",
-        "width",
-        "height",
-      ]);
+      const {
+        width,
+        height,
+        "border-radius": borderRadius,
+      } = copyStyles(element, ["border-radius", "width", "height"]);
+      console.log(borderRadius);
       setCursorStyle("background-color", colorCode);
       setCursorStyle("mix-blend-mode", undefined);
 
@@ -143,7 +144,7 @@ export const Cursor = () => {
       className={cn(
         "fixed pointer-events-none z-[9999] size-6 -translate-x-1/2 -translate-y-1/2 rounded-[100px] bg-foreground mix-blend-difference",
         isExpanded && "size-9",
-        (isFilling || isLeaving) && "-filling",
+        (isFilling || isLeaving) && "-filling mix-blend-lighten",
       )}
       style={{
         top: cursorPosition.y,

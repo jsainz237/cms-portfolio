@@ -1,36 +1,39 @@
+import React, { Suspense } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
 import { Project, Technology } from "@/sanity/types";
 
+import { AnimatedFill } from "./animated-fill";
 import { TechIcon } from "./tech-icon";
 
 interface Props {
-  project: Project & { technologies: Technology[] };
+  project: Project & { logo: string; technologies: Technology[] };
 }
 
 export const ProjectCard = ({ project }: Props) => {
   return (
     <div className="flex flex-col">
-      <div
-        className={cn(
-          "cursor-fill group relative isolate flex min-h-[200px] w-full items-center justify-center overflow-hidden rounded-sm border-4 transition-all duration-300 border-muted-foreground bg-background hover:bg-black hover:border-black",
-          `cursor-fill-[${project.background}]`,
-        )}
-      >
-        <h1
-          className="block font-serif text-6xl font-normal uppercase group-hover:hidden"
-          style={{ color: project.background }}
-        >
-          {project.title}
-        </h1>
-        <p
-          className="z-[9999] hidden w-3/4 text-center font-serif font-normal group-hover:block"
-          style={{ color: project.background }}
-        >
-          {project.description}
-        </p>
-        {/* </div> */}
+      <div className="group relative flex min-h-[200px] w-full items-center justify-center overflow-hidden rounded-sm bg-background shadow-[inset_0_0_0_4px] shadow-muted-foreground transition-all duration-300">
+        <div className="relative size-1/2">
+          <Image
+            src={project.logo}
+            alt={project.title!}
+            fill
+            objectFit="contain"
+          />
+        </div>
+        <Suspense fallback={null}>
+          <AnimatedFill
+            className="flex flex-col items-center justify-center"
+            containerClassName="flex justify-center items-center rounded-sm"
+            style={{ backgroundColor: project.background }}
+          >
+            <p className="z-20 w-3/4 text-center font-serif font-normal text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              {project.description}
+            </p>
+          </AnimatedFill>
+        </Suspense>
       </div>
       <div className="flex items-center justify-between">
         <div className="flex">
