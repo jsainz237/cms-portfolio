@@ -30,7 +30,7 @@ export default async function Projects() {
   const projects = await getProjects();
 
   return (
-    <div className="relative flex-1 animate-page-fade-in pr-12">
+    <div className="flex-1 animate-page-fade-in pr-12">
       <div className="scrollbar-hidden flex h-full max-h-screen flex-col gap-12 overflow-y-auto">
         <div className="mt-36" />
         {projects.map(project => (
@@ -39,7 +39,9 @@ export default async function Projects() {
       </div>
 
       <Lines className="absolute right-0 top-0 -z-50 h-screen" />
-      <div className="absolute left-0 top-0 -z-10 h-screen w-12 animate-[translate-x_10s_linear_infinite] bg-mixed-gradient mix-blend-plus-lighter" />
+      <div className="absolute left-0 top-0 -z-10 h-screen w-screen overflow-hidden mix-blend-plus-lighter">
+        <div className="h-screen w-12 animate-[translate-x_10s_linear_infinite] bg-mixed-gradient" />
+      </div>
     </div>
   );
 }
