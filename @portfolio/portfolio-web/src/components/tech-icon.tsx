@@ -15,7 +15,7 @@ export const TechIcon = ({ tech }: Props) => {
   return (
     <button
       className={cn(
-        "cursor-fill group mt-2 flex cursor-none items-center rounded-full shadow-inset-4 shadow-muted-foreground",
+        "cursor-fill group mt-2 flex cursor-none items-center rounded-full shadow-[inset_0_0_0_1px] transition-shadow duration-300 hover:shadow-transparent shadow-muted-foreground",
         `cursor-fill-[${tech.background}]`,
       )}
     >
@@ -26,6 +26,8 @@ export const TechIcon = ({ tech }: Props) => {
             alt={tech.name!}
             fill
             objectFit="contain"
+            // CSS Filter calculated from https://codepen.io/sosuke/pen/Pjoqqp
+            className="transition-[filter] duration-300 [filter:brightness(0)_saturate(100%)_invert(74%)_sepia(5%)_saturate(1231%)_hue-rotate(176deg)_brightness(88%)_contrast(84%)] group-hover:filter-none"
           />
         </div>
       </div>

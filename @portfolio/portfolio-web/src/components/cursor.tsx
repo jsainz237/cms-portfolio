@@ -121,10 +121,10 @@ export const Cursor = () => {
       console.log("calling handleFillableMouseLeave");
       const element = e.currentTarget as Element;
 
-      observer.unobserve(element);
       setIsStatic(false);
       setIsFilling(false);
       setIsLeaving(true);
+      observer.unobserve(element);
 
       [
         "background-color",
