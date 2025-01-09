@@ -27,8 +27,7 @@ const getProjects = unstable_cache(
 );
 
 export default async function Projects() {
-  const _projects = await getProjects();
-  const projects = new Array(5).fill(_projects[0]);
+  const projects = await getProjects();
 
   return (
     <div className="relative flex-1 animate-page-fade-in pr-12">

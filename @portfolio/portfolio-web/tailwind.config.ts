@@ -25,6 +25,10 @@ export default {
         "mixed-gradient":
           "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(2,8,23,1) 25%, rgba(2,8,23,1) 75%, rgba(255,255,255,0) 100%)",
       },
+      boxShadow: {
+        "inset-4": "inset 0 0 0 4px",
+        "inset-1": "inset 0 0 0 1px",
+      },
       keyframes: {
         highlighter: {
           "0%": { maxWidth: "0" },

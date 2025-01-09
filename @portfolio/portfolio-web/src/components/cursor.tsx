@@ -5,14 +5,18 @@ import { usePathname } from "next/navigation";
 
 import { cn, parsePx } from "@/lib/utils";
 
+const TRANSITION_DURATION = 200;
+
 export const Cursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [lockedPosition, setLockedPosition] = useState({ x: 0, y: 0 });
 
-  const [isFilling, setIsFilling] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isStatic, setIsStatic] = useState(false);
+  const [isFilling, setIsFilling] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
+
   const pathname = usePathname();
 
   const setCursorStyle = useCallback((key: string, value?: string) => {
@@ -62,7 +66,9 @@ export const Cursor = () => {
 
   // Apply hover effect to hoverable elements
   useEffect(() => {
-    const hoverables = document.querySelectorAll("button, a");
+    const hoverables = Array.from(
+      document.querySelectorAll("button, a"),
+    ).filter(element => !element.classList.contains("cursor-fill"));
 
     const handleHoverableMouseEnter = () => setIsExpanded(true);
     const handleHoverableMouseLeave = () => setIsExpanded(false);
@@ -83,32 +89,40 @@ export const Cursor = () => {
   // Apply fill effect to fillable elements
   useEffect(() => {
     const fillables = document.querySelectorAll(".cursor-fill");
+    const observer = new ResizeObserver(([{ target }]) => {
+      console.log("calling observer callback");
+      const colorCode = extractColorCode(target);
+      const { x: elemX, y: elemY } = target.getBoundingClientRect();
 
-    const handleFillableMouseEnter = (e: any) => {
-      if (!cursorRef.current) return;
+      const { width, height } = copyStyles(target, [
+        "border-radius",
+        "width",
+        "height",
+      ]);
 
-      const element = e.currentTarget as Element;
-
-      const colorCode = extractColorCode(element);
-      const { x: elemX, y: elemY } = element.getBoundingClientRect();
-
-      const {
-        width,
-        height,
-        "border-radius": borderRadius,
-      } = copyStyles(element, ["border-radius", "width", "height"]);
-      console.log(borderRadius);
       setCursorStyle("background-color", colorCode);
-      setCursorStyle("mix-blend-mode", undefined);
-
-      setIsFilling(true);
       setLockedPosition({
         x: elemX + parsePx(width) / 2,
         y: elemY + parsePx(height) / 2,
       });
+    });
+
+    const handleFillableMouseEnter = (e: any) => {
+      console.log("calling handleFillableMouseEnter");
+      if (!cursorRef.current) return;
+      const element = e.currentTarget as Element;
+
+      setIsFilling(true);
+      setTimeout(() => setIsStatic(true), TRANSITION_DURATION);
+      observer.observe(element);
     };
 
-    const handleFillableMouseLeave = () => {
+    const handleFillableMouseLeave = (e: any) => {
+      console.log("calling handleFillableMouseLeave");
+      const element = e.currentTarget as Element;
+
+      observer.unobserve(element);
+      setIsStatic(false);
       setIsFilling(false);
       setIsLeaving(true);
 
@@ -119,7 +133,7 @@ export const Cursor = () => {
         "width",
         "border-radius",
       ].forEach(key => setCursorStyle(key, undefined));
-      setTimeout(() => setIsLeaving(false), 200);
+      setTimeout(() => setIsLeaving(false), TRANSITION_DURATION);
     };
 
     fillables.forEach(element => {
@@ -144,7 +158,8 @@ export const Cursor = () => {
       className={cn(
         "fixed pointer-events-none z-[9999] size-6 -translate-x-1/2 -translate-y-1/2 rounded-[100px] bg-foreground mix-blend-difference",
         isExpanded && "size-9",
-        (isFilling || isLeaving) && "-filling mix-blend-lighten",
+        !isStatic && (isFilling || isLeaving) && "-filling mix-blend-lighten",
+        isStatic && "-static-position mix-blend-lighten",
       )}
       style={{
         top: cursorPosition.y,

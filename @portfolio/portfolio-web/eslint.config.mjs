@@ -46,7 +46,12 @@ const eslintConfig = [
       "tailwindcss/no-custom-classname": [
         "warn",
         {
-          whitelist: ["-filling", "cursor-fill", "cursor-fill-\\[.*\\]"],
+          whitelist: [
+            "-filling",
+            "cursor-fill",
+            "cursor-fill-\\[.*\\]",
+            "scrollbar-hidden",
+          ],
         },
       ],
     },

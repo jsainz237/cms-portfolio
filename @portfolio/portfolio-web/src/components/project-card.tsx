@@ -17,7 +17,7 @@ interface Props {
 export const ProjectCard = ({ project }: Props) => {
   return (
     <div className="flex flex-col">
-      <div className="group relative flex min-h-[200px] w-full items-center justify-center overflow-hidden rounded-sm bg-background shadow-[inset_0_0_0_4px] shadow-muted-foreground transition-all duration-300">
+      <div className="group relative flex min-h-[200px] w-full items-center justify-center overflow-hidden rounded-sm bg-background shadow-inset-4 shadow-muted-foreground transition-all duration-300">
         <div className="relative size-1/2">
           <Image
             src={project.logo}
