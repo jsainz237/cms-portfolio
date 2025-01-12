@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import Link, { type LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { sleep } from "@/lib/utils";
 
@@ -13,17 +14,27 @@ interface Props extends LinkProps {
 
 export const TransitionLink = ({ children, href, ...props }: Props) => {
   const router = useRouter();
+  const pathname = usePathname();
+
+  const setContainerOpacity = (opacity: number) => {
+    const transitionContainer = document.getElementById("transition-container");
+    if (!transitionContainer) return;
+
+    transitionContainer.style.opacity = opacity.toString();
+  };
+
+  useEffect(() => {
+    setContainerOpacity(1);
+  }, [pathname]);
 
   const handleClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
-    const transitionContainer = document.getElementById("transition-container");
-    if (!transitionContainer) return;
+    if (href === pathname) return;
 
-    transitionContainer.style.opacity = "0";
+    setContainerOpacity(0);
     await sleep(TRANSITION_DURATION);
     router.push(href as string);
-    transitionContainer.style.opacity = "1";
   };
 
   return (

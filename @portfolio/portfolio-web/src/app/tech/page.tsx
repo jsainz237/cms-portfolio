@@ -29,9 +29,7 @@ export default async function TechPage() {
   return (
     <div className="flex-1 animate-page-fade-in pr-12">
       <SmallTriangles className="absolute bottom-20 right-[8vw] -z-10" />
-      <Suspense fallback={<div>Loading...</div>}>
-        <TechScroller techList={tech} />
-      </Suspense>
+      <TechScroller techList={tech} />
     </div>
   );
 }

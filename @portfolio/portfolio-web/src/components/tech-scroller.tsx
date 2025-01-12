@@ -34,6 +34,8 @@ export const TechScroller = ({ techList }: Props) => {
 
   // Transform mouseY to scroll speed based on screen position
   useTransform(mouseY, latest => {
+    if (!window) return;
+
     const screenMiddle = window.innerHeight / 2;
     if (latest < screenMiddle) {
       // Above middle - scroll up (negative speed)
@@ -105,8 +107,10 @@ export const TechScroller = ({ techList }: Props) => {
       mouseY.set(e.clientY);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    if (window) {
+      window.addEventListener("mousemove", handleMouseMove);
+      return () => window.removeEventListener("mousemove", handleMouseMove);
+    }
   }, [mouseY]);
 
   return (
@@ -144,7 +148,7 @@ const TechItem = ({ tech }: { tech: TechQueryResult[number] }) => {
         />
       )}
       <div
-        className="flex-1 font-normal transition-all duration-300 group-hover:font-bold"
+        className="flex-1 font-normal lowercase transition-all duration-300 group-hover:font-bold"
         style={{ color: hovered ? tech.background : undefined }}
       >
         {tech.name}
