@@ -7,7 +7,7 @@ import { ProjectQueryResult } from "@/sanity/types";
 
 import Lines from "../../../public/bg-lines.svg";
 
-const projectQuery = groq`*[_type == "project"] | order(_updatedAt desc){
+const projectQuery = groq`*[_type == "project"] | order(order asc){
   ...,
   'logo': logo.asset->url,
   technologies[]->{

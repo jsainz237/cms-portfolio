@@ -17,13 +17,6 @@ export const technologyType = defineType({
       type: 'image',
     }),
     defineField({
-      name: 'highlight',
-      title: 'Hightlight Color',
-      type: 'string',
-      initialValue: '#FFFFFF',
-      validation: (rule) => rule.required().regex(/^#([0-9a-fA-F]{6})$/),
-    }),
-    defineField({
       name: 'background',
       title: 'Background Color',
       type: 'string',

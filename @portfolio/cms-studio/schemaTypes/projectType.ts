@@ -31,6 +31,13 @@ export const projectType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'order',
+      title: 'Sort Order',
+      type: 'number',
+      initialValue: 0,
+      validation: (rule) => rule.min(0),
+    }),
+    defineField({
       name: 'links',
       type: 'array',
       of: [
@@ -57,5 +64,12 @@ export const projectType = defineType({
       of: [{ type: 'reference', to: [{ type: 'technology' }] }],
       validation: (rule) => rule.required().min(1),
     }),
+  ],
+  orderings: [
+    {
+      title: 'Sort Order',
+      name: 'sortOrder',
+      by: [{ field: 'order', direction: 'asc' }],
+    },
   ],
 });
