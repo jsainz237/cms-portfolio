@@ -21,14 +21,15 @@ export const TechIcon = ({ tech }: Props) => {
     >
       <div className="flex size-6 items-center justify-center rounded-full">
         <div className="relative size-4">
-          <Image
-            src={tech.icon?.url}
-            alt={tech.name!}
-            fill
-            objectFit="contain"
-            // CSS Filter calculated from https://codepen.io/sosuke/pen/Pjoqqp
-            className="transition-[filter] duration-300 [filter:brightness(0)_saturate(100%)_invert(74%)_sepia(5%)_saturate(1231%)_hue-rotate(176deg)_brightness(88%)_contrast(84%)] group-hover:filter-none"
-          />
+          {tech.icon?.url && (
+            <Image
+              src={tech.icon.url!}
+              alt={tech.name!}
+              fill
+              objectFit="contain"
+              className="filter-muted-foreground transition-[filter] duration-300 group-hover:filter-none"
+            />
+          )}
         </div>
       </div>
       <p className="max-w-0 overflow-hidden text-nowrap text-xs text-foreground transition-all duration-300 group-hover:text-white group-focus:ml-1 group-focus:mr-2 group-focus:max-w-32">

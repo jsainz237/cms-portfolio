@@ -51,6 +51,7 @@ const eslintConfig = [
             "cursor-fill",
             "cursor-fill-\\[.*\\]",
             "scrollbar-hidden",
+            "filter-muted-foreground",
           ],
         },
       ],

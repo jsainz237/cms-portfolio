@@ -126,3 +126,9 @@
     @apply after:content-[''] after:w-0 after:h-1/2 after:absolute after:top-[18px] after:left-2 after:bg-foreground after:mix-blend-difference;
   }
 }
+
+@layer utilities {
+  .filter-muted-foreground {
+    @apply [filter:brightness(0)_saturate(100%)_invert(74%)_sepia(5%)_saturate(1231%)_hue-rotate(176deg)_brightness(88%)_contrast(84%)];
+  }
+}
