@@ -7,7 +7,9 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
+import Image from "next/image";
 
+import { getColorFilter } from "@/lib/color";
 import { TechQueryResult } from "@/sanity/types";
 
 const SCROLL_BUFFER = 100;
@@ -110,7 +112,7 @@ export const TechScroller = ({ techList }: Props) => {
   return (
     <div
       ref={scrollRef}
-      className="scrollbar-hidden flex h-screen flex-1 flex-col overflow-y-auto pr-[12vw] text-right"
+      className="scrollbar-hidden flex h-screen flex-1 flex-col items-end overflow-y-auto pr-[12vw] text-right"
       style={{ gap: GAP }}
       onScroll={handleScroll}
     >
@@ -122,5 +124,31 @@ export const TechScroller = ({ techList }: Props) => {
 };
 
 const TechItem = ({ tech }: { tech: TechQueryResult[number] }) => {
-  return <div>{tech.name}</div>;
+  const [hovered, setHovered] = useState(false);
+  const filter = getColorFilter(tech.background!);
+
+  return (
+    <div
+      className="group flex items-end gap-2"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {tech.icon?.url && (
+        <Image
+          src={tech.icon.url}
+          alt={tech.name!}
+          width={100}
+          height={100}
+          className="filter-muted-foreground size-6 transition-[filter] duration-300"
+          style={{ filter: hovered && filter ? filter : undefined }}
+        />
+      )}
+      <div
+        className="flex-1 font-normal transition-all duration-300 group-hover:font-bold"
+        style={{ color: hovered ? tech.background : undefined }}
+      >
+        {tech.name}
+      </div>
+    </div>
+  );
 };
