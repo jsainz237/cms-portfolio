@@ -257,11 +257,29 @@ export type ProjectQueryResult = Array<{
   }> | null;
 }>;
 
+// Source: ./src/app/tech/page.tsx
+// Variable: techQuery
+// Query: *[_type == "technology"] {  ...,  'icon': {    'url': icon.asset->url  }}
+export type TechQueryResult = Array<{
+  _id: string;
+  _type: "technology";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  icon: {
+    url: string | null;
+  };
+  highlight?: string;
+  background?: string;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "biography"] | order(_updatedAt desc)[0]': BioQueryResult;
     "*[_type == \"project\"] | order(_updatedAt desc){\n  ...,\n  'logo': logo.asset->url,\n  technologies[]->{\n    ...,\n    'icon': {\n      'url': icon.asset->url\n    }\n  }\n}": ProjectQueryResult;
+    "*[_type == \"technology\"] {\n  ...,\n  'icon': {\n    'url': icon.asset->url\n  }\n}": TechQueryResult;
   }
 }

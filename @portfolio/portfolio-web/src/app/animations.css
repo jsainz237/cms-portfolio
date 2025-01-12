@@ -40,6 +40,18 @@
   }
 }
 
+@keyframes sway {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
