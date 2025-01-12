@@ -74,6 +74,28 @@ export type Slug = {
   source?: string;
 };
 
+export type Permalink = {
+  _id: string;
+  _type: "permalink";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  url?: string;
+  icon?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  order?: number;
+};
+
 export type Technology = {
   _id: string;
   _type: "technology";
@@ -92,7 +114,6 @@ export type Technology = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  highlight?: string;
   background?: string;
 };
 
@@ -125,6 +146,7 @@ export type Project = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  order?: number;
   links?: Array<{
     title?: string;
     url?: string;
@@ -203,6 +225,7 @@ export type AllSanitySchemaTypes =
   | SanityFileAsset
   | Geopoint
   | Slug
+  | Permalink
   | Technology
   | Biography
   | Project
@@ -226,7 +249,7 @@ export type BioQueryResult = {
 
 // Source: ./src/app/projects/page.tsx
 // Variable: projectQuery
-// Query: *[_type == "project"] | order(_updatedAt desc){  ...,  'logo': logo.asset->url,  technologies[]->{    ...,    'icon': {      'url': icon.asset->url    }  }}
+// Query: *[_type == "project"] | order(order asc){  ...,  'logo': logo.asset->url,  technologies[]->{    ...,    'icon': {      'url': icon.asset->url    }  }}
 export type ProjectQueryResult = Array<{
   _id: string;
   _type: "project";
@@ -237,6 +260,7 @@ export type ProjectQueryResult = Array<{
   description?: string;
   background?: string;
   logo: string | null;
+  order?: number;
   links?: Array<{
     title?: string;
     url?: string;
@@ -252,7 +276,6 @@ export type ProjectQueryResult = Array<{
     icon: {
       url: string | null;
     };
-    highlight?: string;
     background?: string;
   }> | null;
 }>;
@@ -270,7 +293,6 @@ export type TechQueryResult = Array<{
   icon: {
     url: string | null;
   };
-  highlight?: string;
   background?: string;
 }>;
 
@@ -279,7 +301,7 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "biography"] | order(_updatedAt desc)[0]': BioQueryResult;
-    "*[_type == \"project\"] | order(_updatedAt desc){\n  ...,\n  'logo': logo.asset->url,\n  technologies[]->{\n    ...,\n    'icon': {\n      'url': icon.asset->url\n    }\n  }\n}": ProjectQueryResult;
+    "*[_type == \"project\"] | order(order asc){\n  ...,\n  'logo': logo.asset->url,\n  technologies[]->{\n    ...,\n    'icon': {\n      'url': icon.asset->url\n    }\n  }\n}": ProjectQueryResult;
     "*[_type == \"technology\"] {\n  ...,\n  'icon': {\n    'url': icon.asset->url\n  }\n}": TechQueryResult;
   }
 }
