@@ -1,9 +1,9 @@
-import { FileText, Github, Linkedin } from "lucide-react";
+import React, { Suspense } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
+import { Permalinks } from "./permalinks";
 import { TransitionLink } from "./transition-link";
 
 const logoHeight = 24;
@@ -13,17 +13,10 @@ export function Title() {
   return (
     <div className="z-50 flex flex-1">
       <div className="dashed-border ml-8 mr-16 h-full w-px animate-linefall" />
-      <div className="absolute bottom-32 left-[22px] flex flex-col items-center gap-4">
-        <Link href="/resume">
-          <FileText className="size-6 bg-background stroke-foreground" />
-        </Link>
-        <Link href="https://www.linkedin.com/in/joshua-m-1999/">
-          <Linkedin className="size-6 bg-background stroke-foreground" />
-        </Link>
-        <Link href="https://github.com/joshua-m-1999">
-          <Github className="size-6 bg-background stroke-foreground" />
-        </Link>
-      </div>
+      <Suspense fallback={null}>
+        <Permalinks />
+      </Suspense>
+
       <div className="py-4">
         <TransitionLink href="/">
           <Image

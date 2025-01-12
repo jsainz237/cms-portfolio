@@ -247,6 +247,37 @@ export type BioQueryResult = {
   about?: string;
 } | null;
 
+// Source: ./src/components/permalinks.tsx
+// Variable: permalinksQuery
+// Query: *[_type == "permalink"] | order(order asc){  ...,  'icon': icon.asset->url}
+export type PermalinksQueryResult = Array<{
+  _id: string;
+  _type: "permalink";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  url?: string;
+  icon: string | null;
+  order?: number;
+}>;
+
+// Source: ./src/app/tech/page.tsx
+// Variable: techQuery
+// Query: *[_type == "technology"] {  ...,  'icon': {    'url': icon.asset->url  }}
+export type TechQueryResult = Array<{
+  _id: string;
+  _type: "technology";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  icon: {
+    url: string | null;
+  };
+  background?: string;
+}>;
+
 // Source: ./src/app/projects/page.tsx
 // Variable: projectQuery
 // Query: *[_type == "project"] | order(order asc){  ...,  'logo': logo.asset->url,  technologies[]->{    ...,    'icon': {      'url': icon.asset->url    }  }}
@@ -280,28 +311,13 @@ export type ProjectQueryResult = Array<{
   }> | null;
 }>;
 
-// Source: ./src/app/tech/page.tsx
-// Variable: techQuery
-// Query: *[_type == "technology"] {  ...,  'icon': {    'url': icon.asset->url  }}
-export type TechQueryResult = Array<{
-  _id: string;
-  _type: "technology";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  icon: {
-    url: string | null;
-  };
-  background?: string;
-}>;
-
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "biography"] | order(_updatedAt desc)[0]': BioQueryResult;
-    "*[_type == \"project\"] | order(order asc){\n  ...,\n  'logo': logo.asset->url,\n  technologies[]->{\n    ...,\n    'icon': {\n      'url': icon.asset->url\n    }\n  }\n}": ProjectQueryResult;
+    "*[_type == \"permalink\"] | order(order asc){\n  ...,\n  'icon': icon.asset->url\n}": PermalinksQueryResult;
     "*[_type == \"technology\"] {\n  ...,\n  'icon': {\n    'url': icon.asset->url\n  }\n}": TechQueryResult;
+    "*[_type == \"project\"] | order(order asc){\n  ...,\n  'logo': logo.asset->url,\n  technologies[]->{\n    ...,\n    'icon': {\n      'url': icon.asset->url\n    }\n  }\n}": ProjectQueryResult;
   }
 }
