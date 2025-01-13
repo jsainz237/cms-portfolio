@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
 import { usePathname } from "next/navigation";
 
 import { cn, parsePx } from "@/lib/utils";
@@ -150,6 +151,8 @@ export const Cursor = () => {
   }, [pathname, copyStyles, extractColorCode, setCursorStyle]);
 
   const cursorPosition = isFilling ? lockedPosition : position;
+
+  if (isMobile) return null;
 
   return (
     <div
