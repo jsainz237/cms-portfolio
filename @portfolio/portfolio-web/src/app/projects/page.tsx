@@ -36,6 +36,7 @@ export default async function Projects() {
         {projects.map(project => (
           <ProjectCard key={project._id} project={project as any} />
         ))}
+        <div className="mt-36" />
       </div>
 
       <Lines className="absolute right-0 top-0 -z-50 h-screen" />
