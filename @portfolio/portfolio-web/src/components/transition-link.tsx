@@ -33,7 +33,6 @@ export const TransitionLink = ({ children, href, ...props }: Props) => {
     if (href === pathname) return;
 
     setContainerOpacity(0);
-    await sleep(TRANSITION_DURATION);
     router.push(href as string);
   };
 
