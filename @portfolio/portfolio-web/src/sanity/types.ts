@@ -74,6 +74,20 @@ export type Slug = {
   source?: string;
 };
 
+export type Experience = {
+  _id: string;
+  _type: "experience";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  company?: string;
+  highlight?: string;
+  location?: string;
+  startDate?: string;
+  endDate?: string;
+  current?: boolean;
+};
+
 export type Permalink = {
   _id: string;
   _type: "permalink";
@@ -225,6 +239,7 @@ export type AllSanitySchemaTypes =
   | SanityFileAsset
   | Geopoint
   | Slug
+  | Experience
   | Permalink
   | Technology
   | Biography
@@ -235,18 +250,6 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
-// Source: ./src/app/about/page.tsx
-// Variable: bioQuery
-// Query: *[_type == "biography"] | order(_updatedAt desc)[0]
-export type BioQueryResult = {
-  _id: string;
-  _type: "biography";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  about?: string;
-} | null;
-
 // Source: ./src/components/permalinks.tsx
 // Variable: permalinksQuery
 // Query: *[_type == "permalink"] | order(order asc){  ...,  'icon': icon.asset->url}
@@ -262,20 +265,33 @@ export type PermalinksQueryResult = Array<{
   order?: number;
 }>;
 
-// Source: ./src/app/tech/page.tsx
-// Variable: techQuery
-// Query: *[_type == "technology"] {  ...,  'icon': {    'url': icon.asset->url  }}
-export type TechQueryResult = Array<{
+// Source: ./src/app/about/page.tsx
+// Variable: bioQuery
+// Query: *[_type == "biography"] | order(_updatedAt desc)[0]
+export type BioQueryResult = {
   _id: string;
-  _type: "technology";
+  _type: "biography";
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  name?: string;
-  icon: {
-    url: string | null;
-  };
-  background?: string;
+  about?: string;
+} | null;
+
+// Source: ./src/app/experience/page.tsx
+// Variable: experienceQuery
+// Query: *[_type == "experience"] | order(startDate desc)
+export type ExperienceQueryResult = Array<{
+  _id: string;
+  _type: "experience";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  company?: string;
+  highlight?: string;
+  location?: string;
+  startDate?: string;
+  endDate?: string;
+  current?: boolean;
 }>;
 
 // Source: ./src/app/projects/page.tsx
@@ -311,13 +327,30 @@ export type ProjectQueryResult = Array<{
   }> | null;
 }>;
 
+// Source: ./src/app/tech/page.tsx
+// Variable: techQuery
+// Query: *[_type == "technology"] {  ...,  'icon': {    'url': icon.asset->url  }}
+export type TechQueryResult = Array<{
+  _id: string;
+  _type: "technology";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  icon: {
+    url: string | null;
+  };
+  background?: string;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "biography"] | order(_updatedAt desc)[0]': BioQueryResult;
     "*[_type == \"permalink\"] | order(order asc){\n  ...,\n  'icon': icon.asset->url\n}": PermalinksQueryResult;
-    "*[_type == \"technology\"] {\n  ...,\n  'icon': {\n    'url': icon.asset->url\n  }\n}": TechQueryResult;
+    '*[_type == "biography"] | order(_updatedAt desc)[0]': BioQueryResult;
+    '*[_type == "experience"] | order(startDate desc)': ExperienceQueryResult;
     "*[_type == \"project\"] | order(order asc){\n  ...,\n  'logo': logo.asset->url,\n  technologies[]->{\n    ...,\n    'icon': {\n      'url': icon.asset->url\n    }\n  }\n}": ProjectQueryResult;
+    "*[_type == \"technology\"] {\n  ...,\n  'icon': {\n    'url': icon.asset->url\n  }\n}": TechQueryResult;
   }
 }

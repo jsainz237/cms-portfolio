@@ -12,7 +12,7 @@ const logoWidth = 1.354 * logoHeight;
 export function Title() {
   return (
     <div className="z-50 flex flex-1">
-      <div className="dashed-border ml-8 mr-16 h-full w-px animate-linefall" />
+      <div className="dashed-border-y ml-8 mr-16 h-full w-px animate-linefall" />
       <Suspense fallback={null}>
         <Permalinks />
       </Suspense>

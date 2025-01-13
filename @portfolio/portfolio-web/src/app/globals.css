@@ -77,12 +77,7 @@
   #cursor {
     transition: background-color .2s ease-in-out, height .2s ease-in-out, width .2s ease-in-out, border-radius .2s ease-in-out;
   }
-  #cursor.-filling {
-    transition: top .2s cubic-bezier(0,.1,.1,1), left .25s cubic-bezier(0,.1,.1,1), background-color .2s ease-in-out, height .2s ease-in-out, width .2s ease-in-out, border-radius .2s ease-in-out;
-  }
-  #cursor.-static-position {
-    transition: none;
-  }
+
   .scrollbar-hidden::-webkit-scrollbar {
     display: none;
   }
@@ -115,11 +110,18 @@
   .type-muted {
     @apply text-sm text-muted-foreground;
   }
-  .dashed-border {
+
+  .dashed-border-y {
     @apply bg-gradient-to-b from-slate-700 from-60% to-transparent to-60%;
     background-position: right;
     background-size: 1px 12px;
     background-repeat: repeat-y;
+  }
+  .dashed-border-x {
+    @apply bg-gradient-to-r from-slate-700 from-60% to-transparent to-60%;
+    background-position: bottom;
+    background-size: 12px 1px;
+    background-repeat: repeat-x;
   }
   .highlighted {
     @apply relative hover:after:w-[140%] after:transition-all after:duration-200 after:ease-out-quart;
@@ -128,7 +130,18 @@
 }
 
 @layer utilities {
+  #cursor.-filling {
+    transition: top .2s cubic-bezier(0,.1,.1,1), left .25s cubic-bezier(0,.1,.1,1), background-color .2s ease-in-out, height .2s ease-in-out, width .2s ease-in-out, border-radius .2s ease-in-out;
+  }
+  #cursor.-static-position {
+    transition: none;
+  }
+
   .filter-muted-foreground {
     @apply [filter:brightness(0)_saturate(100%)_invert(74%)_sepia(5%)_saturate(1231%)_hue-rotate(176deg)_brightness(88%)_contrast(84%)];
+  }
+
+  .text-stroke {
+    -webkit-text-stroke-width: 1px;
   }
 }
