@@ -31,8 +31,8 @@ export default async function Projects() {
 
   return (
     <div className="flex-1 animate-page-fade-in pr-12">
-      <div className="scrollbar-hidden flex h-full max-h-screen flex-col gap-12 overflow-y-auto">
-        <div className="mt-36" />
+      <div className="scrollbar-hidden flex h-full max-h-screen flex-col gap-12 overflow-y-auto max-md:overflow-y-visible">
+        <div className="mt-36 max-lg:mt-24 max-md:hidden" />
         {projects.map(project => (
           <ProjectCard key={project._id} project={project as any} />
         ))}

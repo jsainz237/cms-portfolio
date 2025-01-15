@@ -32,13 +32,13 @@ export const ProjectCard = ({ project }: Props) => {
             containerClassName="flex justify-center items-center rounded-sm"
             style={{ backgroundColor: project.background }}
           >
-            <p className="z-20 w-3/4 text-center font-serif font-normal text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <p className="z-20 w-3/4 text-center font-serif font-normal text-background opacity-0 transition-opacity duration-200 group-hover:opacity-100 max-sm:text-sm">
               {project.description}
             </p>
           </AnimatedFill>
         </Suspense>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="mt-2 flex items-center justify-between">
         <div className="flex">
           {project.links?.map(({ title, url }, idx, { length }) => (
             <div key={title}>
@@ -49,7 +49,7 @@ export const ProjectCard = ({ project }: Props) => {
             </div>
           ))}
         </div>
-        <div className="flex gap-2">
+        <div className="max-[560px]:hidden flex gap-2">
           {project.technologies?.map(tech => (
             <TechIcon key={tech.name} tech={tech} />
           ))}

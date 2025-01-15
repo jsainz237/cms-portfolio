@@ -15,7 +15,7 @@ export const TechIcon = ({ tech }: Props) => {
   return (
     <button
       className={cn(
-        "cursor-fill group mt-2 flex cursor-none items-center rounded-full shadow-[inset_0_0_0_1px] transition-shadow duration-300 hover:shadow-transparent shadow-muted-foreground",
+        "cursor-fill group flex cursor-none items-center rounded-full shadow-[inset_0_0_0_1px] transition-shadow duration-300 hover:shadow-transparent shadow-muted-foreground",
         `cursor-fill-[${tech.background}]`,
       )}
     >
