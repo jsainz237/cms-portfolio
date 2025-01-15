@@ -1,100 +1,100 @@
 <svg width="80" height="546" viewBox="0 0 80 546" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="301" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="12" cy="359" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="504" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="12" cy="243" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="417" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="12" cy="156" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 6s;" cx="12" cy="330" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="214" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 4s;" cx="12" cy="533" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="272" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="446" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 3s;" cx="40" cy="128" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="302" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 5ss;" cx="40" cy="186" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="360" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 2s;" cx="40" cy="505" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="244" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 1s;" cx="40" cy="418" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="157" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 3s;" cx="40" cy="476" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="215" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="389" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 2s;" cx="40" cy="447" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="128" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="302" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="68" cy="186" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 5s;" cx="68" cy="244" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 3s;" cx="68" cy="418" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="68" cy="331" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="68" cy="476" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 4s;" cx="68" cy="215" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 1s;" cx="68" cy="389" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="534" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="68" cy="505" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="534" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 4s;" cx="68" cy="273" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="301" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 1s;" cx="12" cy="359" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 4s;" cx="12" cy="504" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="12" cy="243" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="39" cy="272" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="39" cy="331" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 4s;" cx="12" cy="417" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 1s;" cx="12" cy="156" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="12" cy="186" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 3s;" cx="12" cy="389" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="330" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 5s;" cx="12" cy="214" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="12" cy="272" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 6s;" cx="12" cy="446" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="476" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="128" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 1s;" cx="40" cy="302" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="186" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="40" cy="360" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="40" cy="505" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="244" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 3s;" cx="40" cy="418" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="40" cy="157" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="476" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="215" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 1s;" cx="40" cy="389" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="447" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="128" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 5s;" cx="68" cy="302" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="186" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 1s;" cx="68" cy="156" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="244" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="418" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 2s;" cx="68" cy="331" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="476" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="68" cy="447" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 4s;" cx="68" cy="360" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="215" r="12" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="68" cy="389" r="12" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="68" cy="13" r="12" transform="rotate(-180 68 13)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="100" r="12" transform="rotate(-180 68 100)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 5s;" cx="68" cy="71" r="12" transform="rotate(-180 68 71)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="40" cy="12" r="12" transform="rotate(-180 40 12)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 1s;" cx="40" cy="99" r="12" transform="rotate(-180 40 99)" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="40" cy="41" r="12" transform="rotate(-180 40 41)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="70" r="12" transform="rotate(-180 40 70)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 4s;" cx="12" cy="99" r="12" transform="rotate(-180 12 99)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="41" r="12" transform="rotate(-180 12 41)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 1s;" cx="68" cy="13" r="12" transform="rotate(-180 68 13)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 5s;" cx="68" cy="100" r="12" transform="rotate(-180 68 100)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="68" cy="71" r="12" transform="rotate(-180 68 71)" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="68" cy="41" r="12" transform="rotate(-180 68 41)" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="40" cy="12" r="12" transform="rotate(-180 40 12)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 5s;" cx="12" cy="12" r="12" transform="rotate(-180 12 12)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="71" r="12" transform="rotate(-180 12 71)" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s;" cx="12" cy="128" r="12" transform="rotate(-180 12 128)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="40" cy="99" r="12" transform="rotate(-180 40 99)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="40" cy="41" r="12" transform="rotate(-180 40 41)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 4s;" cx="40" cy="70" r="12" transform="rotate(-180 40 70)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 0s;" cx="12" cy="99" r="12" transform="rotate(-180 12 99)" fill="#0B1420"/>
-<circle style="animation: fadeInOut 10s infinite ease-in-out 2s;" cx="12" cy="41" r="12" transform="rotate(-180 12 41)" fill="#0B1420"/>
-<circle style="animation: fadeOutIn 10s infinite ease-in-out 1s;" cx="68" cy="273" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="301" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="12" cy="359" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="504" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="12" cy="243" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="417" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="12" cy="156" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 6s both;" cx="12" cy="330" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="214" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 4s both;" cx="12" cy="533" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="272" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="446" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 3s both;" cx="40" cy="128" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="302" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 5s both;" cx="40" cy="186" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="360" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 2s both;" cx="40" cy="505" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="244" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 1s both;" cx="40" cy="418" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="157" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 3s both;" cx="40" cy="476" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="215" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="389" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 2s both;" cx="40" cy="447" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="128" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="302" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="68" cy="186" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 5s both;" cx="68" cy="244" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 3s both;" cx="68" cy="418" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="68" cy="331" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="68" cy="476" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 4s both;" cx="68" cy="215" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 1s both;" cx="68" cy="389" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="534" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="68" cy="505" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="534" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 4s both;" cx="68" cy="273" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="301" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 1s both;" cx="12" cy="359" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 4s both;" cx="12" cy="504" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="12" cy="243" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="39" cy="272" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="39" cy="331" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 4s both;" cx="12" cy="417" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 1s both;" cx="12" cy="156" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="12" cy="186" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 3s both;" cx="12" cy="389" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="330" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 5s both;" cx="12" cy="214" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="12" cy="272" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 6s both;" cx="12" cy="446" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="476" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="128" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 1s both;" cx="40" cy="302" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="186" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="40" cy="360" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="40" cy="505" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="244" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 3s both;" cx="40" cy="418" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="40" cy="157" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="476" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="215" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 1s both;" cx="40" cy="389" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="447" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="128" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 5s both;" cx="68" cy="302" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="186" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 1s both;" cx="68" cy="156" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="244" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="418" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 2s both;" cx="68" cy="331" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="476" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="68" cy="447" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 4s both;" cx="68" cy="360" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="215" r="12" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="68" cy="389" r="12" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="68" cy="13" r="12" transform="rotate(-180 68 13)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="100" r="12" transform="rotate(-180 68 100)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 5s both;" cx="68" cy="71" r="12" transform="rotate(-180 68 71)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="40" cy="12" r="12" transform="rotate(-180 40 12)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 1s both;" cx="40" cy="99" r="12" transform="rotate(-180 40 99)" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="40" cy="41" r="12" transform="rotate(-180 40 41)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="70" r="12" transform="rotate(-180 40 70)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 4s both;" cx="12" cy="99" r="12" transform="rotate(-180 12 99)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="41" r="12" transform="rotate(-180 12 41)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 1s both;" cx="68" cy="13" r="12" transform="rotate(-180 68 13)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 5s both;" cx="68" cy="100" r="12" transform="rotate(-180 68 100)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="68" cy="71" r="12" transform="rotate(-180 68 71)" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="68" cy="41" r="12" transform="rotate(-180 68 41)" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="40" cy="12" r="12" transform="rotate(-180 40 12)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 5s both;" cx="12" cy="12" r="12" transform="rotate(-180 12 12)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="71" r="12" transform="rotate(-180 12 71)" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 0s both;" cx="12" cy="128" r="12" transform="rotate(-180 12 128)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="40" cy="99" r="12" transform="rotate(-180 40 99)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="40" cy="41" r="12" transform="rotate(-180 40 41)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 4s both;" cx="40" cy="70" r="12" transform="rotate(-180 40 70)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 0s both;" cx="12" cy="99" r="12" transform="rotate(-180 12 99)" fill="#0B1420"/>
+<circle style="animation: fadeInOut 10s infinite ease-in-out 2s both;" cx="12" cy="41" r="12" transform="rotate(-180 12 41)" fill="#0B1420"/>
+<circle style="animation: fadeOutIn 10s infinite ease-in-out 1s both;" cx="68" cy="273" r="12" fill="#0B1420"/>
 </svg>
