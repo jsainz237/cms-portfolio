@@ -4,10 +4,6 @@ import { useEffect } from "react";
 import Link, { type LinkProps } from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-import { sleep } from "@/lib/utils";
-
-const TRANSITION_DURATION = 500;
-
 interface Props extends LinkProps {
   children: React.ReactNode;
 }

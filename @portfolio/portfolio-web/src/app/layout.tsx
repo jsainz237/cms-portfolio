@@ -2,6 +2,7 @@ import { Literata, Montserrat, VT323 } from "next/font/google";
 import type { Metadata } from "next";
 
 import { Cursor } from "@/components/cursor";
+import { Permalinks } from "@/components/permalinks";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Title } from "@/components/title";
 
@@ -44,6 +45,7 @@ export default function RootLayout({
           <Cursor />
           <div className="flex min-h-screen gap-16 overflow-x-hidden max-md:flex-col max-md:pl-20 lg:gap-32">
             <Title />
+            <Permalinks />
             <div id="transition-container" className="flex flex-1">
               {children}
             </div>

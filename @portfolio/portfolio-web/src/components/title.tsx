@@ -1,23 +1,21 @@
-import React, { Suspense } from "react";
+"use client";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
-import { Permalinks } from "./permalinks";
 import { TransitionLink } from "./transition-link";
 
 const logoHeight = 24;
 const logoWidth = 1.354 * logoHeight;
 
 export function Title() {
+  const pathname = usePathname();
+
   return (
     <div className="z-50 flex">
       <div className="dashed-border-y fixed left-8 top-0 h-full w-px animate-linefall" />
-
-      <Suspense fallback={null}>
-        <Permalinks />
-      </Suspense>
-
       <div className="ml-24 py-4 max-md:ml-0">
         <TransitionLink href="/">
           <Image
@@ -43,22 +41,42 @@ export function Title() {
 
         <div className="mt-28 flex flex-col items-start gap-6 max-lg:mt-16 max-md:mt-12">
           <TransitionLink href="/about">
-            <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#decaba] max-lg:text-xl">
+            <h2
+              className={cn(
+                "highlighted font-serif text-2xl text-muted-foreground after:bg-[#decaba] max-lg:text-xl",
+                pathname === "/about" && "highlighted-active",
+              )}
+            >
               About
             </h2>
           </TransitionLink>
           <TransitionLink href="/projects">
-            <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#badebe] max-lg:text-xl">
+            <h2
+              className={cn(
+                "highlighted font-serif text-2xl text-muted-foreground after:bg-[#badebe] max-lg:text-xl",
+                pathname === "/projects" && "highlighted-active",
+              )}
+            >
               Projects
             </h2>
           </TransitionLink>
           <TransitionLink href="/tech">
-            <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#d3bade] max-lg:text-xl">
+            <h2
+              className={cn(
+                "highlighted font-serif text-2xl text-muted-foreground after:bg-[#d3bade] max-lg:text-xl",
+                pathname === "/tech" && "highlighted-active",
+              )}
+            >
               Tech
             </h2>
           </TransitionLink>
           <TransitionLink href="experience">
-            <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#debacd] max-lg:text-xl">
+            <h2
+              className={cn(
+                "highlighted font-serif text-2xl text-muted-foreground after:bg-[#debacd] max-lg:text-xl",
+                pathname === "/experience" && "highlighted-active",
+              )}
+            >
               Experience
             </h2>
           </TransitionLink>
