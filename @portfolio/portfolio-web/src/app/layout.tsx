@@ -42,7 +42,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Cursor />
-          <div className="flex min-h-screen max-md:flex-col">
+          <div className="flex min-h-screen gap-16 overflow-x-hidden max-md:flex-col max-md:pl-20 lg:gap-32">
             <Title />
             <div id="transition-container" className="flex flex-1">
               {children}

@@ -11,13 +11,14 @@ const logoWidth = 1.354 * logoHeight;
 
 export function Title() {
   return (
-    <div className="z-50 flex flex-1">
-      <div className="dashed-border-y ml-8 mr-16 h-full w-px animate-linefall" />
+    <div className="z-50 flex">
+      <div className="dashed-border-y fixed left-8 top-0 h-full w-px animate-linefall" />
+
       <Suspense fallback={null}>
         <Permalinks />
       </Suspense>
 
-      <div className="py-4">
+      <div className="ml-24 py-4 max-md:ml-0">
         <TransitionLink href="/">
           <Image
             src="/js-logo.svg"
@@ -31,6 +32,7 @@ export function Title() {
             "highlighted text-6xl mt-36 font-serif mb-4 font-normal uppercase z-10",
             "after:top-7 after:max-w-0 after:left-14 after:w-[96%] after:bg-[#97ace7] hover:after:w-[96%] after:animate-highlighter after:h-3/4",
             "max-lg:text-4xl max-lg:mt-24 max-lg:mb-2 max-lg:after:top-4 max-lg:after:left-8 max-lg:after:w-[94%] max-lg:hover:after:w-[94%]",
+            "max-md:mt-12",
           )}
         >
           Jesse Sainz
@@ -39,7 +41,7 @@ export function Title() {
           Austin, TX
         </p>
 
-        <div className="mt-28 flex flex-col items-start gap-6 max-lg:mt-16">
+        <div className="mt-28 flex flex-col items-start gap-6 max-lg:mt-16 max-md:mt-12">
           <TransitionLink href="/about">
             <h2 className="highlighted font-serif text-2xl text-muted-foreground after:bg-[#decaba] max-lg:text-xl">
               About

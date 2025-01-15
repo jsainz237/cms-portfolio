@@ -5,7 +5,7 @@ export function FloatingCircles() {
   const cols = Array.from({ length: 5 }, (_, i) => i);
 
   return (
-    <div className="-z-50 flex flex-row items-end gap-4">
+    <div className="-z-50 flex translate-x-10 flex-row items-end gap-4 max-lg:gap-3">
       {rows.map((offset, idx) => (
         <div
           key={idx}
@@ -17,7 +17,10 @@ export function FloatingCircles() {
           }}
         >
           {cols.map((_, idx) => (
-            <div key={idx} className="size-8 rounded-full bg-slate-900" />
+            <div
+              key={idx}
+              className="size-8 rounded-full bg-slate-900 max-lg:size-6"
+            />
           ))}
         </div>
       ))}

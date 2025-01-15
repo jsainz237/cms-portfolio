@@ -2,14 +2,17 @@ import { FloatingCircles } from "@/components/floating-circles";
 
 export default async function Home() {
   return (
-    <div className="relative flex flex-1 animate-page-fade-in flex-col justify-end pb-[24vh]">
-      <div className="z-10">
-        <h1 className="type-h1 font-serif">Web Developer</h1>
-        <h1 className="type-h1 font-serif">Software Engineer</h1>
-      </div>
-
-      <div className="absolute bottom-[12vh] left-14">
+    <div className="mr-12 flex flex-1 animate-page-fade-in flex-col items-end justify-end pb-[12vh]">
+      <div className="relative">
         <FloatingCircles />
+        <div className="absolute left-0 top-10 z-10">
+          <h1 className="type-h1 max-[380px]:text-2xl font-serif max-sm:text-3xl">
+            Web Developer
+          </h1>
+          <h1 className="type-h1 max-[380px]:text-2xl font-serif max-sm:text-3xl">
+            Software Engineer
+          </h1>
+        </div>
       </div>
     </div>
   );
