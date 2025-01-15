@@ -21,11 +21,11 @@ export default async function ExperiencePage() {
   const experience = await getExperience();
 
   return (
-    <div className="relative flex-1 animate-page-fade-in pr-12">
+    <div className="relative flex flex-1 animate-page-fade-in flex-col justify-end pb-[12vh]">
       <div className="absolute bottom-20 right-[8vw] -z-10">
         <CircleGrid />
       </div>
-      <div className="absolute bottom-[16vh] left-0 flex w-4/5 flex-col gap-12">
+      <div className="flex w-4/5 flex-col gap-12">
         {experience.map(experience => (
           <ExperienceCard key={experience._id} experience={experience} />
         ))}
