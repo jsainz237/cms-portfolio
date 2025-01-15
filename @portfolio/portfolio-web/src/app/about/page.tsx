@@ -1,6 +1,7 @@
 import { unstable_cache } from "next/cache";
 import { groq } from "next-sanity";
 
+import { cn } from "@/lib/utils";
 import { client } from "@/sanity/client";
 import { BioQueryResult } from "@/sanity/types";
 
@@ -22,11 +23,16 @@ export default async function About() {
   if (!bio) return null;
 
   return (
-    <div className="relative flex flex-1 animate-page-fade-in flex-col justify-end">
-      <div className="w-3/4 pb-[12vh]">
+    <div className="relative flex flex-1 animate-page-fade-in flex-col justify-end max-md:static">
+      <div className="w-full pb-[12vh] md:pr-16 xl:w-3/4">
         <p className="z-10 whitespace-pre-line">{bio.about}</p>
       </div>
-      <Triangles className="absolute bottom-[12vh] left-1/2 -z-10 -translate-x-1/2" />
+      <Triangles
+        className={cn(
+          "absolute bottom-[12vh] left-1/2 -z-10 -translate-x-1/2",
+          "max-md:right-0 max-md:left-auto max-md:translate-x-0",
+        )}
+      />
     </div>
   );
 }
