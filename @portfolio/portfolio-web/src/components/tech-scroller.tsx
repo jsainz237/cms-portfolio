@@ -1,128 +1,118 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
+  motion,
   useAnimationFrame,
   useMotionValue,
-  useSpring,
   useTransform,
+  wrap,
 } from "motion/react";
 import Image from "next/image";
 
 import { getColorFilter } from "@/lib/color";
 import { TechQueryResult } from "@/sanity/types";
 
-const SCROLL_BUFFER = 100;
-const GAP = 32;
-const SCROLL_SPEED_MULTIPLIER = 1.3; // Adjust multiplier for faster/slower scroll
+const SCROLL_SPEED_FAST = 0.5;
+const SCROLL_SPEED_SLOW = 0.15;
 
 interface Props {
   techList: TechQueryResult;
 }
 
 export const TechScroller = ({ techList }: Props) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const mouseY = useMotionValue(0);
-  const [list, setList] = useState(techList);
-  const [scrollHeight, setScrollHeight] = useState(0);
+  const GAP = 32;
+  const ref = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Add smooth spring physics to the scroll speed
-  const scrollSpeed = useSpring(0, {
-    damping: 50,
-    stiffness: 300,
-  });
+  const scrollOffset = () => {
+    if (!ref.current) return 0;
+    return ref.current.offsetHeight / 2 + GAP / 2;
+  };
 
-  // Transform mouseY to scroll speed based on screen position
-  useTransform(mouseY, latest => {
-    if (!window) return;
+  const baseY = useMotionValue(0);
+  const baseTranslate = useTransform(baseY, v => wrap(-scrollOffset(), 0, v));
+  const y = useTransform(baseTranslate, v => `${v}px`);
 
-    const screenMiddle = window.innerHeight / 2;
-    if (latest < screenMiddle) {
-      // Above middle - scroll up (negative speed)
-      const percentage = 1 - latest / screenMiddle;
-      scrollSpeed.set(-percentage * SCROLL_SPEED_MULTIPLIER);
-    } else {
-      // Below middle - scroll down (positive speed)
-      const percentage = (latest - screenMiddle) / screenMiddle;
-      scrollSpeed.set(percentage * SCROLL_SPEED_MULTIPLIER);
-    }
-  });
-
-  // Apply the scroll effect
   useAnimationFrame(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop += scrollSpeed.get();
-    }
+    baseY.set(
+      baseY.get() + (isHovered ? SCROLL_SPEED_SLOW : SCROLL_SPEED_FAST),
+    );
   });
 
-  const onScrollTopReached = () => {
-    const scrollTop = scrollRef.current?.scrollTop;
+  return (
+    <div className="flex h-screen flex-1 justify-end overflow-y-hidden pr-[12vw] max-md:hidden">
+      <motion.div
+        ref={ref}
+        className="flex h-max flex-col items-end gap-8 text-right"
+        style={{ y, gap: GAP }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {[...techList, ...techList].map((tech, idx) => (
+          <TechItem key={idx} tech={tech} />
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
-    setList([...techList, ...techList]);
-    scrollRef.current?.scrollTo({
-      top: scrollTop! + scrollHeight + GAP,
-      behavior: "instant",
-    });
+export const TechScrollerMobile = ({ techList }: Props) => {
+  const GAP = 16;
+  const ref1 = useRef<HTMLDivElement>(null);
+  const ref2 = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const baseX = useMotionValue(0);
+
+  const scrollOffset = (ref: HTMLDivElement | null) => {
+    if (!ref) return 0;
+    return ref.offsetWidth / 2 + GAP / 2;
   };
 
-  const onScrollBottomReached = () => {
-    const scrollTop = scrollRef.current!.scrollTop;
+  const translateX1 = useTransform(baseX, v =>
+    wrap(0, scrollOffset(ref1.current), v),
+  );
+  const translateX2 = useTransform(baseX, v =>
+    wrap(-scrollOffset(ref2.current), 0, v),
+  );
 
-    setList([...techList, ...techList]);
-    scrollRef.current?.scrollTo({
-      top: scrollTop - scrollHeight - GAP,
-      behavior: "instant",
-    });
-  };
+  const x1 = useTransform(translateX1, v => `-${v}px`);
+  const x2 = useTransform(translateX2, v => `${v}px`);
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const scrollTop = e.currentTarget.scrollTop;
-    const scrollBottom = scrollTop + window.innerHeight;
-    const containerHeight = e.currentTarget.scrollHeight;
+  useAnimationFrame(() => {
+    baseX.set(
+      baseX.get() + (isHovered ? SCROLL_SPEED_SLOW : SCROLL_SPEED_FAST),
+    );
+  });
 
-    if (scrollTop <= SCROLL_BUFFER) {
-      return onScrollTopReached();
-    }
-
-    if (scrollBottom >= containerHeight - SCROLL_BUFFER) {
-      return onScrollBottomReached();
-    }
-  };
-
-  // Calculate the scroll height of the container only on mount
-  useEffect(() => {
-    if (scrollRef.current && !scrollHeight) {
-      setScrollHeight(scrollRef.current.scrollHeight);
-    }
-  }, [scrollRef, scrollHeight]);
-
-  // Simulate a scroll to the top when the component mounts
-  useEffect(() => {
-    onScrollTopReached();
-  }, []);
-
-  // Track mouse position
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseY.set(e.clientY);
-    };
-
-    if (window) {
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
-    }
-  }, [mouseY]);
+  const techListHalf1 = techList.slice(0, techList.length / 2);
+  const techListHalf2 = techList.slice(techList.length / 2);
 
   return (
     <div
-      ref={scrollRef}
-      className="scrollbar-hidden flex h-screen flex-1 flex-col items-end overflow-y-auto pr-[12vw] text-right"
-      style={{ gap: GAP }}
-      onScroll={handleScroll}
+      className="overflow-x-hidden"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {list.map((tech, idx) => (
-        <TechItem key={idx} tech={tech} />
-      ))}
+      <motion.div
+        ref={ref1}
+        className="flex w-max flex-row gap-4 md:hidden"
+        style={{ x: x1 }}
+      >
+        {[...techListHalf1, ...techListHalf1].map((tech, idx) => (
+          <TechItem key={idx} tech={tech} />
+        ))}
+      </motion.div>
+      <motion.div
+        ref={ref2}
+        className="mt-10 flex w-max flex-row gap-4 md:hidden"
+        style={{ x: x2 }}
+      >
+        {[...techListHalf2, ...techListHalf2].map((tech, idx) => (
+          <TechItem key={idx} tech={tech} />
+        ))}
+      </motion.div>
     </div>
   );
 };
@@ -133,7 +123,7 @@ const TechItem = ({ tech }: { tech: TechQueryResult[number] }) => {
 
   return (
     <div
-      className="group flex items-end gap-2"
+      className="group flex shrink-0 items-end gap-2"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -148,7 +138,7 @@ const TechItem = ({ tech }: { tech: TechQueryResult[number] }) => {
         />
       )}
       <div
-        className="flex-1 font-normal lowercase transition-all duration-300 group-hover:font-bold"
+        className="whitespace-nowrap font-normal lowercase transition-all duration-300 group-hover:font-bold"
         style={{ color: hovered ? tech.background : undefined }}
       >
         {tech.name}
