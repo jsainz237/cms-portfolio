@@ -23,7 +23,7 @@ export async function Permalinks() {
   const permalinks = await getPermalinks();
 
   return (
-    <div className="fixed bottom-32 left-[22px] flex flex-col items-center gap-4">
+    <div className="fixed bottom-32 left-[22px] z-50 flex flex-col items-center gap-4">
       {permalinks.map(permalink => (
         <Link key={permalink.title} href={permalink.url!}>
           <div className="relative size-6 bg-background">
