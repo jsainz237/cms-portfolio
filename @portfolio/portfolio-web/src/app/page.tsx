@@ -6,10 +6,10 @@ export default async function Home() {
       <div className="relative">
         <FloatingCircles />
         <div className="absolute left-0 top-10 z-10">
-          <h1 className="type-h1 max-[380px]:text-2xl font-serif max-sm:text-3xl">
+          <h1 className="type-h1 font-serif max-sm:text-3xl max-[380px]:text-2xl">
             Web Developer
           </h1>
-          <h1 className="type-h1 max-[380px]:text-2xl font-serif max-sm:text-3xl">
+          <h1 className="type-h1 font-serif max-sm:text-3xl max-[380px]:text-2xl">
             Software Engineer
           </h1>
         </div>

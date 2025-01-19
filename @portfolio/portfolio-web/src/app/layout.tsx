@@ -10,15 +10,18 @@ import "./globals.css";
 
 const literata = Literata({
   variable: "--font-serif",
+  subsets: ["latin"],
 });
 
 const montserrat = Montserrat({
   variable: "--font-sans",
+  subsets: ["latin"],
 });
 
 const vt323 = VT323({
   weight: ["400"],
   variable: "--font-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prefer-const */
 // copied from https://codepen.io/sosuke/pen/Pjoqqp
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */

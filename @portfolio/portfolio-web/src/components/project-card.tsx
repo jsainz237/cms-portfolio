@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +20,7 @@ export const ProjectCard = ({ project }: Props) => {
       <div className="group relative flex min-h-[200px] w-full items-center justify-center overflow-hidden rounded-sm bg-background shadow-inset-4 shadow-muted-foreground transition-all duration-300">
         <div className="relative size-1/2">
           <Image
-            src={project.logo}
+            src={project.logo!}
             alt={project.title!}
             fill
             objectFit="contain"

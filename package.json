@@ -5,7 +5,9 @@
     "@portfolio/*"
   ],
   "scripts": {
-    "dev": "lerna run dev"
+    "dev": "lerna run dev",
+    "build": "lerna run build",
+    "deploy": "lerna run deploy"
   },
   "devDependencies": {
     "lerna": "^8.1.9"

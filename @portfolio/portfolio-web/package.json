@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "deploy": "rm -rf node_modules && next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix"
@@ -41,5 +42,12 @@
     "prettier": "^3.4.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "nx": {
+    "targets": {
+      "deploy": {
+        "dependsOn": ["^deploy"]
+      }
+    }
   }
 }
