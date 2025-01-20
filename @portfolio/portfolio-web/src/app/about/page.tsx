@@ -24,7 +24,7 @@ export default async function About() {
 
   return (
     <div className="relative flex flex-1 animate-page-fade-in flex-col items-end justify-end max-md:static">
-      <div className="w-full pb-[12vh] md:pr-16 xl:w-3/4">
+      <div className="w-full pb-[12vh] pr-8 md:pr-16 xl:w-3/4">
         <p className="z-10 whitespace-pre-line">{bio.about}</p>
       </div>
       <Triangles

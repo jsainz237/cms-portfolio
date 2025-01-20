@@ -46,10 +46,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Cursor />
-          <div className="flex min-h-screen justify-between gap-16 overflow-x-hidden max-md:flex-col max-md:pl-20 lg:gap-32">
+          <div className="flex min-h-screen gap-16 overflow-x-hidden max-md:flex-col max-md:pl-20 md:justify-between lg:gap-32">
             <Title />
             <Permalinks />
-            <div id="transition-container" className="flex max-w-4xl flex-1">
+            <div id="transition-container" className="flex max-w-4xl md:flex-1">
               {children}
             </div>
           </div>
