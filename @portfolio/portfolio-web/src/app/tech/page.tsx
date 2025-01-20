@@ -27,7 +27,7 @@ export default async function TechPage() {
   const tech = await getTech();
 
   return (
-    <div className="relative w-full flex-1 animate-page-fade-in pr-12 max-md:pr-0">
+    <div className="relative min-h-[240px] w-full flex-1 animate-page-fade-in pr-12 max-md:pr-0">
       <SmallTriangles className="absolute -z-10 max-md:origin-top-right max-md:-translate-x-full max-md:-rotate-90 md:bottom-20 md:right-[8vw]" />
       <TechScroller techList={tech} />
       <TechScrollerMobile techList={tech} />

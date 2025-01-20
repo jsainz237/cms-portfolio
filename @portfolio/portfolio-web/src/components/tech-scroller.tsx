@@ -91,13 +91,13 @@ export const TechScrollerMobile = ({ techList }: Props) => {
 
   return (
     <div
-      className="overflow-x-hidden"
+      className="overflow-x-hidden md:hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
         ref={ref1}
-        className="flex w-max flex-row gap-4 md:hidden"
+        className="flex w-max flex-row gap-4"
         style={{ x: x1 }}
       >
         {[...techListHalf1, ...techListHalf1].map((tech, idx) => (
@@ -106,7 +106,7 @@ export const TechScrollerMobile = ({ techList }: Props) => {
       </motion.div>
       <motion.div
         ref={ref2}
-        className="mt-10 flex w-max flex-row gap-4 md:hidden"
+        className="mt-10 flex w-max flex-row gap-4"
         style={{ x: x2 }}
       >
         {[...techListHalf2, ...techListHalf2].map((tech, idx) => (
