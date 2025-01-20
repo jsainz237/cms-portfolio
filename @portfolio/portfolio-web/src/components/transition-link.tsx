@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import Link, { type LinkProps } from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
+import { sleep } from "@/lib/utils";
+
 interface Props extends LinkProps {
   children: React.ReactNode;
 }
@@ -29,6 +31,7 @@ export const TransitionLink = ({ children, href, ...props }: Props) => {
     if (href === pathname) return;
 
     setContainerOpacity(0);
+    await sleep(500);
     router.push(href as string);
   };
 

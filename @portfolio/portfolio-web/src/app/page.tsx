@@ -2,7 +2,7 @@ import { FloatingCircles } from "@/components/floating-circles";
 
 export default async function Home() {
   return (
-    <div className="mr-12 flex flex-1 animate-page-fade-in flex-col items-end justify-end pb-[12vh]">
+    <div className="mr-12 flex flex-1 animate-page-fade-in flex-col items-end justify-end md:pb-[12vh]">
       <div className="relative">
         <FloatingCircles />
         <div className="absolute left-0 top-10 z-10">
